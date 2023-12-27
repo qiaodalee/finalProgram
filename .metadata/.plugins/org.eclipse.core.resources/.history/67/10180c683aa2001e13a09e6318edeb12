@@ -1,0 +1,55 @@
+package HW4;
+
+public class genericQueue {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int size = 5;
+		
+		genQueue<Integer> intQueue =new genQueue(size);
+		genQueue<Number> numQueue =new genQueue(size);
+		genQueue<Double> doubleQueue =new genQueue(size);
+		
+		System.out.print("Int queue: ");
+		intQueue.enqueue(1);
+		System.out.print(intQueue.front()+", ");
+		intQueue.enqueue(2);
+		System.out.print(intQueue.front()+", ");
+		intQueue.enqueue(3);
+		System.out.println(intQueue.front());
+		
+		intQueue.dequeue();
+		System.out.println("Dequeue intQueue 1 time");
+		System.out.println("Int queue's front: "+intQueue.front());
+		
+		System.out.print("Number queue: ");
+		numQueue.enqueue(1);
+		System.out.print(numQueue.front()+", ");
+		numQueue.enqueue(1.5);
+		System.out.print(numQueue.front()+", ");
+		numQueue.enqueue(2);
+		System.out.println(numQueue.front());
+		
+		numQueue.dequeue();
+		numQueue.dequeue();
+		System.out.println("Dequeue numQueue 2 time");
+		System.out.println("Int queue's front: "+numQueue.front());
+		
+		System.out.print("Double queue: ");
+		doubleQueue.enqueue(1.2);
+		System.out.print(doubleQueue.front()+", ");
+		doubleQueue.enqueue(1.5);
+		System.out.print(doubleQueue.front()+", ");
+		doubleQueue.enqueue(1.8);
+		System.out.println(doubleQueue.front());
+		
+		doubleQueue.dequeue();
+		doubleQueue.dequeue();
+		doubleQueue.dequeue();
+		System.out.println("Dequeue doubleQueue 3 time");
+		System.out.println("Int queue's front: "+doubleQueue.front());
+				
+		
+	}
+
+}

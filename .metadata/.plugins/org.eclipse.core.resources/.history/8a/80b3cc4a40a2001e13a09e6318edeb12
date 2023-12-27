@@ -1,0 +1,37 @@
+package HW4;
+import java.util.*;
+
+public class maxOccurence {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in);
+
+        System.out.print("k= ");
+        int k = scanner.nextInt();
+
+        List<Integer> integers = new ArrayList<>();
+        for (int i = 0; i < k; i++) {
+        	System.out.print(i+": ");
+            integers.add(scanner.nextInt());
+        }
+
+        Map<Integer, Integer> occurrences = new HashMap<>();
+
+        for (Integer num : integers) {
+            occurrences.put(num, occurrences.getOrDefault(num, 0) + 1);
+        }
+
+        int max = Collections.max(occurrences.values());
+
+        List<Integer> mostOccurrencesIntegers = new ArrayList<>();
+        for (Map.Entry<Integer, Integer> i : occurrences.entrySet()) {
+            if (i.getValue() == max) {
+                mostOccurrencesIntegers.add(i.getKey());
+            }
+        }
+
+        System.out.println(max + " times）: " + mostOccurrencesIntegers);
+	}
+
+}

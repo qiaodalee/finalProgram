@@ -1,0 +1,28 @@
+package HW4;
+
+public class genericQueue {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int size = 5;
+		
+		genQueue<Integer> intQueue =new genQueue(size);
+		genQueue<Number> numQueue =new genQueue(size);
+		genQueue<Double> doubleQueue =new genQueue(size);
+		
+		System.out.println("Int queue: ");
+		intQueue.enqueue(1);
+		System.out.println(intQueue.front()+", ");
+		intQueue.enqueue(2);
+		System.out.println(intQueue.front()+", ");
+		intQueue.enqueue(3);
+		System.out.println(intQueue.front()+", ");
+		
+		
+		numQueue.enqueue(1.2);
+		doubleQueue.enqueue(1.5);
+		
+		
+	}
+
+}

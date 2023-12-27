@@ -1,0 +1,45 @@
+package HW4;
+
+public class genQueue <E>{
+	private int size;
+	private int rear;
+	private E[] elements;
+	
+	public genQueue(int size) {
+		this.size = size;
+		this.rear = -1;
+		this.elements = (E[]) new Object[size];
+	}
+	
+	public void enqueue(E element) {
+		if ( this.rear < this.size-1) {
+			this.elements[rear+1] =element; 
+			this.rear++;
+		}
+		else {
+			System.out.println("Queue full");
+		}
+	}
+	
+	public void dequeue() {
+		if ( this.rear > -1) {
+			this.elements[this.rear] = null;
+			this.rear--;
+		}
+		else {
+			System.out.println("No element");
+		}
+	}
+	
+	public void enqueueAll(genQueue<E> queue, E[] array) {
+        for (E element : array) {
+            queue.enqueue(element);
+        }
+    }
+	
+	public void dequeueAll(genQueue<E> queue) {
+        while (rear >= 0) {
+            queue.dequeue();
+        }
+    }
+}
